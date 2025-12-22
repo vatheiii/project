@@ -1,0 +1,712 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cakey – Search & Filter</title>
+    <link rel="stylesheet" href="sandf.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+    <!-- SIDEBAR MENU -->
+    <div id="sidebar" class="sidebar">
+        <button class="close-btn" id="closeSidebar">&times;</button>
+        <nav class="sidebar-nav">
+            <a href="main.html">Home</a>
+            <a href="order.html">Order</a>
+            <a href="setting.html">Settings</a>
+            <a href="acc.html">Account</a>
+            <a href="#" id="signOutBtn">Sign Out</a>
+        </nav>
+    </div>
+
+    <!-- HEADER -->
+    <header>
+        <div class="header-content">
+            <button class="menu-button" id="menuBtn"><i class="fas fa-bars"></i></button>
+            <div class="logo">
+                <img src="no bg logo.png" alt="Cakey Logo">
+            </div>
+        </div>
+    </header>
+
+    <!-- SEARCH BAR -->
+    <div class="search-container">
+        <div class="search-box">
+            <input type="text" id="searchInput" placeholder="Search cakes...">
+            <div class="search-icons">
+                <button class="filter-button"><i class="fas fa-sliders-h"></i></button>
+                <button class="search-button" id="searchBtn"><i class="fas fa-search"></i></button>
+            </div>
+        </div>
+    </div>
+
+    <!-- FILTER PANEL -->
+<div id="filterPanel" class="filter-panel">
+    <div class="filter-group">
+        <p class="filter-title">Cakes</p> <!-- title instead of checkbox -->
+        <label><input type="checkbox" name="size" value="small"> Mini</label>
+        <label><input type="checkbox" name="size" value="big"> Gateau</label>
+        <label><input type="checkbox" name="size" value="slice"> Slice Cake</label>
+        <label><input type="checkbox" name="size" value="layer"> Layer Cake</label>
+    </div>
+    <div class="filter-group">
+        <p class="filter-title">Flavors</p> <!-- title instead of checkbox -->
+        <label><input type="checkbox" name="flavor" value="chocolate"> Chocolate</label>
+        <label><input type="checkbox" name="flavor" value="strawberry"> Strawberry</label>
+        <label><input type="checkbox" name="flavor" value="vanilla"> Vanilla</label>
+        <label><input type="checkbox" name="flavor" value="lemon"> Lemon</label>
+        <label><input type="checkbox" name="flavor" value="salted-caramel"> Salted Caramel</label>
+        <label><input type="checkbox" name="flavor" value="banana"> Banana</label>
+    </div>
+    <button id="applyFilterBtn">Apply Filter</button>
+</div>
+
+
+    <!-- RESULTS -->
+   <div class="product-grid">
+
+    <div class="product-item" data-size="small" data-flavor="strawberry">
+        <img src="strawberry.jpg" alt="Strawberry Mini Cake">
+        <p class="product-name">Strawberry Mini Cake</p>
+        <p class="product-price">$4.50</p>
+    </div>
+
+    <div class="product-item" data-size="small" data-flavor="strawberry">
+        <img src="https://i.pinimg.com/1200x/6b/f1/94/6bf1949eeb23393ed262fd8c9570b206.jpg" alt="Extra Strawberry Mini Cake">
+        <p class="product-name">Extra Strawberry Mini Cake</p>
+        <p class="product-price">$4.80</p>
+    </div>
+
+    <div class="product-item" data-size="small" data-flavor="strawberry">
+        <img src="https://i.pinimg.com/736x/6a/dc/ae/6adcaeb6d24b7ce9ef4d6d1621b01160.jpg" alt="Strawberry Mini Cake With Cream">
+        <p class="product-name">Strawberry Mini Cake With Cream</p>
+        <p class="product-price">$5.00</p>
+    </div>
+
+    <div class="product-item" data-size="small" data-flavor="strawberry">
+        <img src="https://i.pinimg.com/736x/64/a0/ef/64a0efd011b500fdb0674ae60abcd30d.jpg" alt="Mini Strawberry Cake">
+        <p class="product-name">Mini Strawberry Cake</p>
+        <p class="product-price">$4.20</p>
+    </div>
+
+    <div class="product-item" data-size="small" data-flavor="strawberry">
+        <img src="https://i.pinimg.com/1200x/60/bf/3b/60bf3b46eb2590bf98e9784ae609d1d5.jpg" alt="Strawberry Rounded Cake">
+        <p class="product-name">Strawberry Rounded Cake</p>
+        <p class="product-price">$4.70</p>
+    </div>
+
+    <div class="product-item" data-size="small" data-flavor="strawberry">
+        <img src="https://i.pinimg.com/736x/ef/86/14/ef861463958b2abe80392e969e7dc206.jpg" alt="Square Strawberry Mini Cake">
+        <p class="product-name">Square Strawberry Mini Cake</p>
+        <p class="product-price">$4.60</p>
+    </div>
+
+    <div class="product-item" data-size="small" data-flavor="strawberry">
+        <img src="https://i.pinimg.com/1200x/64/67/b3/6467b37bf084233b2cda76470e09b402.jpg" alt="Strawberry Cake">
+        <p class="product-name">Strawberry Cake</p>
+        <p class="product-price">$4.40</p>
+    </div>
+
+    <div class="product-item" data-size="small" data-flavor="strawberry">
+        <img src="https://i.pinimg.com/736x/e3/68/ce/e368cef90dbab40d48138f15e66e07aa.jpg" alt="White Strawberry Mini Cake">
+        <p class="product-name">White Strawberry Mini Cake</p>
+        <p class="product-price">$4.90</p>
+    </div>
+
+    <div class="product-item" data-size="small" data-flavor="strawberry">
+        <img src="https://i.pinimg.com/1200x/a5/5f/14/a55f1428c5d9c91c515daf5036b91c17.jpg" alt="Extra Brown Strawberry Mini Cake">
+        <p class="product-name">Extra Brown Strawberry Mini Cake</p>
+        <p class="product-price">$5.20</p>
+    </div>
+
+    <div class="product-item" data-size="small" data-flavor="strawberry">
+        <img src="https://i.pinimg.com/736x/18/ff/ff/18ffff98e04460940ab0ee8934e26777.jpg" alt="Strawberry Mini Cake With Fruit Sauce">
+        <p class="product-name">Strawberry Mini Cake With Fruit Sauce</p>
+        <p class="product-price">$5.50</p>
+    </div>
+     <div class="product-item" data-size="small" data-flavor="chocolate">
+        <img src="https://i.pinimg.com/736x/c5/64/d7/c564d74ebe490f10148fccd8da0a2691.jpg" alt="Mini Choco">
+        <p class="product-name">Mini Choco</p>
+        <p class="product-price">$5.00</p>
+    </div>
+    <div class="product-item" data-size="small" data-flavor="chocolate">
+        <img src="https://i.pinimg.com/1200x/20/27/b6/2027b616140e10b84b0ccee18f8bfbe9.jpg" alt="Mini Choco Cake">
+        <p class="product-name">Mini Choco Cake</p>
+        <p class="product-price">$6.00</p>
+    </div>
+    <div class="product-item" data-size="small" data-flavor="chocolate">
+        <img src="https://i.pinimg.com/736x/4d/9e/f9/4d9ef9f7abd7686e7437543bd1753097.jpg" alt="Mini Choco With Strawberry">
+        <p class="product-name">Mini Choco With Strawberry</p>
+        <p class="product-price">$6.50</p>
+    </div>
+    <div class="product-item" data-size="small" data-flavor="chocolate">
+        <img src="https://i.pinimg.com/736x/8d/12/ae/8d12aeb2dc3370699cbdd135823448d6.jpg" alt="Simple Mini Choco">
+        <p class="product-name">Simple Mini Choco</p>
+        <p class="product-price">$4.00</p>
+    </div>
+    <div class="product-item" data-size="small" data-flavor="chocolate">
+        <img src="https://i.pinimg.com/1200x/c4/08/91/c40891c719af2bd27815d4137a9801c5.jpg" alt="Lava Mini Choco">
+        <p class="product-name">Lava Mini Choco</p>
+        <p class="product-price">$7.00</p>
+    </div>  
+    <div class="product-item" data-size="small" data-flavor="vanilla">
+        <img src="https://i.pinimg.com/1200x/39/e4/4d/39e44de7ae58619ea86f1ff2c6117c81.jpg" alt="Vanilla Cake">
+        <p class="product-name">Vanilla Cake</p>
+        <p class="product-price">$4.00</p>
+    </div>
+     <div class="product-item" data-size="small" data-flavor="vanilla">
+        <img src="https://i.pinimg.com/736x/71/45/ad/7145ad43224d37ab3256e7c8828e6bef.jpg" alt="Vanilla With Cream">
+        <p class="product-name">Vanilla With Cream</p>
+        <p class="product-price">$7.00</p>
+    </div>
+     <div class="product-item" data-size="small" data-flavor="vanilla">
+        <img src="https://i.pinimg.com/736x/84/a6/17/84a617e09d21a6b7feb4cbb5297feced.jpg" alt="Mini Vanilla">
+        <p class="product-name">Mini Vanilla</p>
+        <p class="product-price">$5.50</p>
+    </div>
+     <div class="product-item" data-size="small" data-flavor="Lemon">
+        <img src="https://i.pinimg.com/736x/e5/2c/f6/e52cf654c145ae32840735d3e3e253d1.jpg" alt="Mini Lemon">
+        <p class="product-name">Mini Lemon</p>
+        <p class="product-price">$3.00</p>
+    </div>
+     <div class="product-item" data-size="small" data-flavor="Lemon">
+        <img src="https://i.pinimg.com/736x/18/c8/c0/18c8c07709ea8d9c21d1fcace4955316.jpg" alt="Muffin Lemon">
+        <p class="product-name">Muffin Lemon</p>
+        <p class="product-price">$3.50</p>
+    </div>
+     <div class="product-item" data-size="small" data-flavor="Lemon">
+        <img src="https://i.pinimg.com/1200x/68/6f/65/686f654b0e0b8dfd5ae8aeeaef94bc3e.jpg" alt="Lemon Curd Mini Cake">
+        <p class="product-name">Lemon Curd Mini Cake</p>
+        <p class="product-price">$2.50</p>
+    </div>
+     <div class="product-item" data-size="small" data-flavor="salted-caramel">
+        <img src="https://i.pinimg.com/736x/6e/67/8a/6e678af97a5299b83208e8c578bb55be.jpg" alt="Mini Caramel Cake">
+        <p class="product-name">Mini Caramel Cake</p>
+        <p class="product-price">$2.50</p>
+    </div>
+     <div class="product-item" data-size="small" data-flavor="salted-caramel">
+        <img src="https://i.pinimg.com/1200x/cf/42/6d/cf426d28d86669ce6c28fbb5e11afe66.jpg" alt="Latte Cake">
+        <p class="product-name">Latte Cake</p>
+        <p class="product-price">$3.00</p>
+    </div>
+         <div class="product-item" data-size="small" data-flavor="salted-caramel">
+        <img src="https://i.pinimg.com/736x/89/20/78/892078d4b92a731a3219acd7576cca76.jpg" alt="Salted Caramel Peanut Cake">
+        <p class="product-name">Salted Caramel Peanut Cake</p>
+        <p class="product-price">$5.00</p>
+    </div>
+         <div class="product-item" data-size="small" data-flavor="salted-caramel">
+        <img src="https://i.pinimg.com/1200x/1d/a8/c6/1da8c63a25ed00dfea4089b0713cc4c5.jpg" alt="Mini Caramel Cake With Biscuits">
+        <p class="product-name">Mini Caramel Cake With Biscuits</p>
+        <p class="product-price">$2.50</p>
+    </div>
+         <div class="product-item" data-size="small" data-flavor="salted-caramel">
+        <img src="https://i.pinimg.com/736x/65/f9/dd/65f9dd4a2e344ac5e75a276132cd02c7.jpg" alt="3 in 1 Mini Caramel Cake">
+        <p class="product-name">3 in 1 Mini Caramel Cake</p>
+        <p class="product-price">$3.00</p>
+    </div>
+        <div class="product-item" data-size="small" data-flavor="banana">
+        <img src="https://i.pinimg.com/1200x/7e/aa/7b/7eaa7b86a1b4d7b5ac54d7841c7bdc15.jpg" alt="Mini Banana Cake">
+        <p class="product-name">Mini Banana Cake</p>
+        <p class="product-price">$6.00</p>
+    </div>
+        <div class="product-item" data-size="small" data-flavor="banana">
+        <img src="https://i.pinimg.com/736x/06/fb/95/06fb9508196b93871013e7c87164c413.jpg" alt="3 in 1 Mini Banana Cake">
+        <p class="product-name">3 in 1 Mini Banana Cake</p>
+        <p class="product-price">$3.00</p>
+    </div>
+        <div class="product-item" data-size="small" data-flavor="banana">
+        <img src="https://i.pinimg.com/736x/c4/64/f5/c464f5841dfce4f2e5e42f0b14ebb39d.jpg" alt="Mini Banana Cupcake">
+        <p class="product-name">Mini Banana Cupcake</p>
+        <p class="product-price">$4.50</p>
+    </div>
+    <div class="product-item" data-size="big" data-flavor="chocolate">
+    <img src="https://i.pinimg.com/736x/0b/7b/25/0b7b25e48258ddd399b24ec6fa42fc54.jpg" alt="Chocolate Fudge Gateau">
+    <p class="product-name">Chocolate Fudge Gateau</p>
+    <p class="product-price">$35.00</p>
+</div>
+<div class="product-item" data-size="big" data-flavor="chocolate">
+    <img src="https://i.pinimg.com/736x/2c/e2/31/2ce23119854b98ec8b334c0c4d1fb57d.jpg" alt="Dark Chocolate Gateau">
+    <p class="product-name">Dark Chocolate Gateau</p>
+    <p class="product-price">$38.00</p>
+</div>
+<div class="product-item" data-size="big" data-flavor="chocolate">
+    <img src="https://i.pinimg.com/736x/39/64/0c/39640c9b8817aaa6b541e351d94cd929.jpg" alt="Triple Chocolate Gateau">
+    <p class="product-name">Triple Chocolate Gateau</p>
+    <p class="product-price">$40.0</p>
+</div>
+<div class="product-item" data-size="big" data-flavor="chocolate">
+    <img src="https://i.pinimg.com/1200x/1f/65/c6/1f65c6759e6ad4549c1e3e230089fc3e.jpg" alt="Chocolate Mousse Gateau">
+    <p class="product-name">Chocolate Mousse Gateau</p>
+    <p class="product-price">$37.00</p>
+</div>
+<div class="product-item" data-size="big" data-flavor="chocolate">
+    <img src="https://i.pinimg.com/1200x/71/2f/6c/712f6c5cd354a8e2ad9790fe675672c9.jpg" alt="Decadent Chocolate Gateau">
+    <p class="product-name">Decadent Chocolate Gateau</p>
+    <p class="product-price">$42.00</p>
+</div>
+
+<div class="product-item" data-size="big" data-flavor="strawberry">
+    <img src="https://i.pinimg.com/1200x/f6/ca/e9/f6cae91302e2efe7f02307e13c4d5970.jpg" alt="Fresh Strawberry Gateau">
+    <p class="product-name">Fresh Strawberry Gateau</p>
+    <p class="product-price">$39.00</p>
+</div>
+<div class="product-item" data-size="big" data-flavor="strawberry">
+    <img src="https://i.pinimg.com/736x/ac/74/d6/ac74d67d07dee48416f470abfbf34397.jpg" alt="Strawberry Cream Gateau">
+    <p class="product-name">Strawberry Cream Gateau</p>
+    <p class="product-price">$41.00</p>
+</div>
+<div class="product-item" data-size="big" data-flavor="strawberry">
+    <img src="https://i.pinimg.com/736x/bc/15/6c/bc156c06bb0f46a34c6c2ba13c81f44a.jpg" alt="Strawberry Shortcake Gateau">
+    <p class="product-name">Strawberry Shortcake Gateau</p>
+    <p class="product-price">$36.00</p>
+</div>
+<div class="product-item" data-size="big" data-flavor="strawberry">
+    <img src="https://i.pinimg.com/1200x/b9/d0/73/b9d07306cc17b394c25d4d26f4c84728.jpg" alt="White Chocolate Strawberry Gateau">
+    <p class="product-name">White Chocolate Strawberry Gateau</p>
+    <p class="product-price">$43.00</p>
+</div>
+<div class="product-item" data-size="big" data-flavor="strawberry">
+    <img src="https://i.pinimg.com/736x/31/91/88/3191887784af13097585f5dad2c935c3.jpg" alt="Strawberry Cheesecake Gateau">
+    <p class="product-name">Strawberry Cheesecake Gateau</p>
+    <p class="product-price">$45.00</p>
+</div>
+
+<div class="product-item" data-size="big" data-flavor="vanilla">
+    <img src="https://i.pinimg.com/1200x/8f/9a/d2/8f9ad282ba4681bbd6420cf21c8489de.jpg" alt="Classic Vanilla Bean Gateau">
+    <p class="product-name">Classic Vanilla Bean Gateau</p>
+    <p class="product-price">$34.00</p>
+</div>
+<div class="product-item" data-size="big" data-flavor="vanilla">
+    <img src="https://i.pinimg.com/1200x/41/74/b2/4174b2233647d9e4e50e23f927c56b3f.jpg" alt="Vanilla Raspberry Gateau">
+    <p class="product-name">Vanilla Raspberry Gateau</p>
+    <p class="product-price">$37.50</p>
+</div>
+<div class="product-item" data-size="big" data-flavor="vanilla">
+    <img src="https://i.pinimg.com/1200x/5d/8b/8f/5d8b8f30bba9965743b6615f90d6f272.jpg" alt="Almond Vanilla Gateau">
+    <p class="product-name">Almond Vanilla Gateau</p>
+    <p class="product-price">$38.50</p>
+</div>
+<div class="product-item" data-size="big" data-flavor="vanilla">
+    <img src="https://i.pinimg.com/736x/79/c7/24/79c724db48107d1c8cc8404d9b5eb2b2.jpg" alt="Simple White Gateau">
+    <p class="product-name">Simple White Gateau</p>
+    <p class="product-price">$33.00</p>
+</div>
+<div class="product-item" data-size="big" data-flavor="vanilla">
+    <img src="https://i.pinimg.com/736x/f2/79/a3/f279a39539e307a5f3ee07d802fe1ac7.jpg" alt="Floral Vanilla Gateau">
+    <p class="product-name">Floral Vanilla Gateau</p>
+    <p class="product-price">$44.00</p>
+</div>
+
+<div class="product-item" data-size="big" data-flavor="lemon">
+    <img src="https://i.pinimg.com/1200x/70/3b/f6/703bf677644f4f47db7f31faf9f807d6.jpg" alt="Bright Lemon Gateau">
+    <p class="product-name">Bright Lemon Gateau</p>
+    <p class="product-price">$36.50</p>
+</div>
+<div class="product-item" data-size="big" data-flavor="lemon">
+    <img src="https://i.pinimg.com/736x/88/d1/f7/88d1f702642fd601998359fbc835d7d6.jpg" alt="Lemon Poppy Seed Gateau">
+    <p class="product-name">Lemon Poppy Seed Gateau</p>
+    <p class="product-price">$39.50</p>
+</div>
+<div class="product-item" data-size="big" data-flavor="lemon">
+    <img src="https://i.pinimg.com/1200x/51/e5/eb/51e5eb93f20f5d25297b3c22edab12ef.jpg" alt="Lemon Meringue Gateau">
+    <p class="product-name">Lemon Meringue Gateau</p>
+    <p class="product-price">$41.50</p>
+</div>
+<div class="product-item" data-size="big" data-flavor="lemon">
+    <img src="https://i.pinimg.com/736x/be/63/e7/be63e702687e82c84758dcb592ddcf71.jpg" alt="Lemon Zest Gateau">
+    <p class="product-name">Lemon Zest Gateau</p>
+    <p class="product-price">$35.50</p>
+</div>
+<div class="product-item" data-size="big" data-flavor="lemon">
+    <img src="https://i.pinimg.com/736x/ad/ec/b3/adecb30a1f44ddd8ffe0ac983ac5fbd2.jpg" alt="Glazed Lemon Gateau">
+    <p class="product-name">Glazed Lemon Gateau</p>
+    <p class="product-price">$40.50</p>
+</div>
+
+<div class="product-item" data-size="big" data-flavor="salted-caramel">
+    <img src="https://i.pinimg.com/736x/4c/88/63/4c886333d1bbbe14e57b7408e657a5fb.jpg" alt="Salted Caramel Swirl Gateau">
+    <p class="product-name">Salted Caramel Swirl Gateau</p>
+    <p class="product-price">$42.50</p>
+</div>
+<div class="product-item" data-size="big" data-flavor="salted-caramel">
+    <img src="https://i.pinimg.com/736x/9a/bb/f2/9abbf21b2feff857c6d9322c0fb6c211.jpg" alt="Caramel Pecan Gateau">
+    <p class="product-name">Caramel Pecan Gateau</p>
+    <p class="product-price">$45.50</p>
+</div>
+<div class="product-item" data-size="big" data-flavor="salted-caramel">
+    <img src="https://i.pinimg.com/736x/63/dd/73/63dd732dc7fb169d3a83be1790167fac.jpg" alt="Choco Salted Caramel Gateau">
+    <p class="product-name">Choco Salted Caramel Gateau</p>
+    <p class="product-price">$43.50</p>
+</div>
+<div class="product-item" data-size="big" data-flavor="salted-caramel">
+    <img src="https://i.pinimg.com/1200x/6c/8f/2b/6c8f2b9de1557ecccb5400c6deda8768.jpg" alt="Mocha Caramel Gateau">
+    <p class="product-name">Mocha Caramel Gateau</p>
+    <p class="product-price">$44.50</p>
+</div>
+<div class="product-item" data-size="big" data-flavor="salted-caramel">
+    <img src="https://i.pinimg.com/1200x/24/ff/13/24ff13c321f857c0df603e1d19833148.jpg" alt="Gourmet Caramel Gateau">
+    <p class="product-name">Gourmet Caramel Gateau</p>
+    <p class="product-price">$46.00</p>
+</div>
+
+<div class="product-item" data-size="big" data-flavor="banana">
+    <img src="https://i.pinimg.com/1200x/23/7b/0c/237b0c8291bb203e4710f1184778c2b7.jpg" alt="Banana Nut Gateau">
+    <p class="product-name">Banana Nut Gateau</p>
+    <p class="product-price">$37.00</p>
+</div>
+<div class="product-item" data-size="big" data-flavor="banana">
+    <img src="https://i.pinimg.com/736x/7c/bf/b1/7cbfb199d7bc0964f0cd0bb4cbbe950f.jpg" alt="Banana Cream Gateau">
+    <p class="product-name">Banana Cream Gateau</p>
+    <p class="product-price">$38.00</p>
+</div>
+<div class="product-item" data-size="big" data-flavor="banana">
+    <img src="https://i.pinimg.com/736x/67/db/b1/67dbb1490d05b7f4de16c45ae68d4d38.jpg" alt="Chocolate Banana Gateau">
+    <p class="product-name">Chocolate Banana Gateau</p>
+    <p class="product-price">$41.00</p>
+</div>
+<div class="product-item" data-size="big" data-flavor="banana">
+    <img src="https://i.pinimg.com/736x/ce/b5/cc/ceb5cca20d07a554b670e5cbe44c5322.jpg" alt="Caramelized Banana Gateau">
+    <p class="product-name">Caramelized Banana Gateau</p>
+    <p class="product-price">$40.00</p>
+</div>
+<div class="product-item" data-size="big" data-flavor="banana">
+    <img src="https://i.pinimg.com/736x/36/97/ab/3697abcc66cb9608e065151695102e37.jpg" alt="Banana Split Gateau">
+    <p class="product-name">Banana Split Gateau</p>
+    <p class="product-price">$42.00</p>
+</div>
+
+
+<div class="product-item" data-size="slice" data-flavor="chocolate">
+    <img src="https://i.pinimg.com/1200x/bf/0a/39/bf0a395addd5ae9f7dfc91d9356fcd8a.jpg" alt="Slice of Chocolate Truffle">
+    <p class="product-name">Slice of Chocolate Truffle</p>
+    <p class="product-price">$6.00</p>
+</div>
+<div class="product-item" data-size="slice" data-flavor="chocolate">
+    <img src="https://i.pinimg.com/736x/4d/b2/da/4db2da29ce466b3bcab424964c0df496.jpg" alt="Slice of Black Forest">
+    <p class="product-name">Slice of Black Forest</p>
+    <p class="product-price">$6.50</p>
+</div>
+<div class="product-item" data-size="slice" data-flavor="chocolate">
+    <img src="https://i.pinimg.com/1200x/24/a3/67/24a3676ca1f002cc5b8c8a6b0e919a7e.jpg" alt="Slice of Molten Lava Cake">
+    <p class="product-name">Slice of Molten Lava Cake</p>
+    <p class="product-price">$7.00</p>
+</div>
+<div class="product-item" data-size="slice" data-flavor="chocolate">
+    <img src="https://i.pinimg.com/736x/c2/8d/bb/c28dbb6df15784ac1101b6c274bb94db.jpg" alt="Slice of Choco Hazelnut">
+    <p class="product-name">Slice of Choco Hazelnut</p>
+    <p class="product-price">$6.20</p>
+</div>
+<div class="product-item" data-size="slice" data-flavor="chocolate">
+    <img src="https://i.pinimg.com/1200x/e4/17/1b/e4171b56fde0d9107b647465550d515f.jpg" alt="Slice of Fudge Brownie Cake">
+    <p class="product-name">Slice of Fudge Brownie Cake</p>
+    <p class="product-price">$6.80</p>
+</div>
+
+<div class="product-item" data-size="slice" data-flavor="strawberry">
+    <img src="https://i.pinimg.com/736x/4a/2c/ce/4a2cced70fd06dd6ce9eb9727f58d103.jpg" alt="Slice of Strawberry Cheesecake">
+    <p class="product-name">Slice of Strawberry Cheesecake</p>
+    <p class="product-price">$6.90</p>
+</div>
+<div class="product-item" data-size="slice" data-flavor="strawberry">
+    <img src="https://i.pinimg.com/736x/54/ed/aa/54edaaa4343dc13bd2b3d807322c2220.jpg" alt="Slice of Strawberry Shortcake">
+    <p class="product-name">Slice of Strawberry Shortcake</p>
+    <p class="product-price">$5.80</p>
+</div>
+<div class="product-item" data-size="slice" data-flavor="strawberry">
+    <img src="https://i.pinimg.com/736x/1b/c7/69/1bc76911f9f676853483f2a3583d91cc.jpg" alt="Slice of Strawberry Ripple">
+    <p class="product-name">Slice of Strawberry Ripple</p>
+    <p class="product-price">$6.10</p>
+</div>
+<div class="product-item" data-size="slice" data-flavor="strawberry">
+    <img src="https://i.pinimg.com/736x/f2/31/2a/f2312af22dafd4f03291511e2e1f3987.jpg" alt="Slice of White Choco Strawberry">
+    <p class="product-name">Slice of White Choco Strawberry</p>
+    <p class="product-price">$7.20</p>
+</div>
+<div class="product-item" data-size="slice" data-flavor="strawberry">
+    <img src="https://i.pinimg.com/736x/06/c5/77/06c57768b9d10159e39758e7b42b93dd.jpg" alt="Slice of Berry Delight">
+    <p class="product-name">Slice of Berry Delight</p>
+    <p class="product-price">$6.40</p>
+</div>
+
+<div class="product-item" data-size="slice" data-flavor="vanilla">
+    <img src="https://i.pinimg.com/1200x/46/15/2b/46152b0b42a025791509921811bb80cd.jpg" alt="Slice of Vanilla Dream">
+    <p class="product-name">Slice of Vanilla Dream</p>
+    <p class="product-price">$5.50</p>
+</div>
+<div class="product-item" data-size="slice" data-flavor="vanilla">
+    <img src="https://i.pinimg.com/1200x/0d/f3/f8/0df3f8e4378fd4fabb248e85dee226d8.jpg" alt="Slice of Vanilla Sponge">
+    <p class="product-name">Slice of Vanilla Sponge</p>
+    <p class="product-price">$5.20</p>
+</div>
+<div class="product-item" data-size="slice" data-flavor="vanilla">
+    <img src="https://i.pinimg.com/1200x/27/30/8f/27308fb2966cc51f03e351a43e2acb9c.jpg" alt="Slice of Vanilla Buttercream">
+    <p class="product-name">Slice of Vanilla Buttercream</p>
+    <p class="product-price">$5.90</p>
+</div>
+<div class="product-item" data-size="slice" data-flavor="vanilla">
+    <img src="https://i.pinimg.com/736x/99/d5/3c/99d53c79263efd15ce1375f99f646b75.jpg" alt="Slice of Vanilla Almond">
+    <p class="product-name">Slice of Vanilla Almond</p>
+    <p class="product-price">$6.30</p>
+</div>
+<div class="product-item" data-size="slice" data-flavor="vanilla">
+    <img src="https://i.pinimg.com/1200x/26/e2/cd/26e2cd824c8476b6db352daa8dcbf59f.jpg" alt="Slice of Vanilla Bean">
+    <p class="product-name">Slice of Vanilla Bean</p>
+    <p class="product-price">$6.70</p>
+</div>
+
+<div class="product-item" data-size="slice" data-flavor="lemon">
+    <img src="https://i.pinimg.com/736x/1e/c6/6d/1ec66d88aba1ac7d0e1cb4ea23edbb46.jpg" alt="Slice of Lemon Curd Cake">
+    <p class="product-name">Slice of Lemon Curd Cake</p>
+    <p class="product-price">$5.70</p>
+</div>
+<div class="product-item" data-size="slice" data-flavor="lemon">
+    <img src="https://i.pinimg.com/1200x/4e/fb/84/4efb84b92e338d8b17dc4cc68f38c391.jpg" alt="Slice of Lemon Drizzle">
+    <p class="product-name">Slice of Lemon Drizzle</p>
+    <p class="product-price">$5.40</p>
+</div>
+<div class="product-item" data-size="slice" data-flavor="lemon">
+    <img src="https://i.pinimg.com/1200x/fb/0b/ec/fb0becc7d9863c30d09b051fc2bd4391.jpg" alt="Slice of Lemon and Elderflower">
+    <p class="product-name">Slice of Lemon and Elderflower</p>
+    <p class="product-price">$6.60</p>
+</div>
+<div class="product-item" data-size="slice" data-flavor="lemon">
+    <img src="https://i.pinimg.com/736x/3f/25/6c/3f256c75a240ddf86e77e09b57c6c2d0.jpg" alt="Slice of Tangy Lemon">
+    <p class="product-name">Slice of Tangy Lemon</p>
+    <p class="product-price">$5.10</p>
+</div>
+<div class="product-item" data-size="slice" data-flavor="lemon">
+    <img src="https://i.pinimg.com/1200x/67/b1/ed/67b1ed71004a208c2bfa73d606758278.jpg" alt="Slice of Iced Lemon Cake">
+    <p class="product-name">Slice of Iced Lemon Cake</p>
+    <p class="product-price">$5.30</p>
+</div>
+
+<div class="product-item" data-size="slice" data-flavor="salted-caramel">
+    <img src="https://i.pinimg.com/1200x/d5/5e/9c/d55e9c19522505f5b0b8bd794d9a36c0.jpg" alt="Slice of Salted Caramel Lava">
+    <p class="product-name">Slice of Salted Caramel Lava</p>
+    <p class="product-price">$7.10</p>
+</div>
+<div class="product-item" data-size="slice" data-flavor="salted-caramel">
+    <img src="https://i.pinimg.com/1200x/ac/58/f3/ac58f323c1a08814443fd32f911568d4.jpg" alt="Slice of Caramel Crunch">
+    <p class="product-name">Slice of Caramel Crunch</p>
+    <p class="product-price">$6.80</p>
+</div>
+<div class="product-item" data-size="slice" data-flavor="salted-caramel">
+    <img src="https://i.pinimg.com/736x/bd/6d/ab/bd6dab0ec8db3a968cd97d3b60440db1.jpg" alt="Slice of Caramel Apple Pie Cake">
+    <p class="product-name">Slice of Caramel Apple Pie Cake</p>
+    <p class="product-price">$6.50</p>
+</div>
+<div class="product-item" data-size="slice" data-flavor="salted-caramel">
+    <img src="https://i.pinimg.com/736x/ed/38/e9/ed38e9ee723d2672d1d2c65ad344ae8e.jpg" alt="Slice of Salted Caramel Pecan">
+    <p class="product-name">Slice of Salted Caramel Pecan</p>
+    <p class="product-price">$7.30</p>
+</div>
+<div class="product-item" data-size="slice" data-flavor="salted-caramel">
+    <img src="https://i.pinimg.com/1200x/86/b5/ee/86b5ee30433f24f28c42acecacac1715.jpg" alt="Slice of Sticky Toffee Caramel">
+    <p class="product-name">Slice of Sticky Toffee Caramel</p>
+    <p class="product-price">$6.90</p>
+</div>
+
+<div class="product-item" data-size="slice" data-flavor="banana">
+    <img src="https://i.pinimg.com/1200x/2a/d7/75/2ad7752fd495e92d2e49998d1419c3a8.jpg" alt="Slice of Banana Bread Cake">
+    <p class="product-name">Slice of Banana Bread Cake</p>
+    <p class="product-price">$5.00</p>
+</div>
+<div class="product-item" data-size="slice" data-flavor="banana">
+    <img src="https://i.pinimg.com/736x/54/ae/ec/54aeec3f64b799fd995dc447cf56ca5a.jpg" alt="Slice of Banana Nutella">
+    <p class="product-name">Slice of Banana Nutella</p>
+    <p class="product-price">$6.10</p>
+</div>
+<div class="product-item" data-size="slice" data-flavor="banana">
+    <img src="https://i.pinimg.com/1200x/04/0a/62/040a626d3316dbe278a3950280a42279.jpg" alt="Slice of Banana Cream Pie Cake">
+    <p class="product-name">Slice of Banana Cream Pie Cake</p>
+    <p class="product-price">$5.80</p>
+</div>
+<div class="product-item" data-size="slice" data-flavor="banana">
+    <img src="https://i.pinimg.com/736x/41/d7/32/41d73233770d989e53a886f89ce022d1.jpg" alt="Slice of Spiced Banana Cake">
+    <p class="product-name">Slice of Spiced Banana Cake</p>
+    <p class="product-price">$5.40</p>
+</div>
+<div class="product-item" data-size="slice" data-flavor="banana">
+    <img src="https://i.pinimg.com/736x/8c/67/61/8c6761b2cf9c3c3f200fdf522c268721.jpg" alt="Slice of Banana Cinnamon">
+    <p class="product-name">Slice of Banana Cinnamon</p>
+    <p class="product-price">$5.60</p>
+</div>
+
+
+<div class="product-item" data-size="layer" data-flavor="chocolate">
+    <img src="https://i.pinimg.com/1200x/66/3d/41/663d412438acb6266084a511d517fe76.jpg" alt="Classic Chocolate Layer Cake">
+    <p class="product-name">Classic Chocolate Layer Cake</p>
+    <p class="product-price">$45.00</p>
+</div>
+<div class="product-item" data-size="layer" data-flavor="chocolate">
+    <img src="https://i.pinimg.com/1200x/0a/a7/fa/0aa7fa55843bc83fbf5a3a08eda399b4.jpg" alt="Dark Chocolate Raspberry Layer">
+    <p class="product-name">Dark Chocolate Raspberry Layer</p>
+    <p class="product-price">$48.00</p>
+</div>
+<div class="product-item" data-size="layer" data-flavor="chocolate">
+    <img src="https://i.pinimg.com/736x/af/5e/e2/af5ee2f60bb7ab3d54caa3cd8a833829.jpg" alt="Chocolate Mousse Layer Cake">
+    <p class="product-name">Chocolate Mousse Layer Cake</p>
+    <p class="product-price">$47.00</p>
+</div>
+<div class="product-item" data-size="layer" data-flavor="chocolate">
+    <img src="https://i.pinimg.com/1200x/7c/3d/a0/7c3da0699ab31ca81762a27d69e14e02.jpg" alt="Chocolate Salted Caramel Layer">
+    <p class="product-name">Chocolate Salted Caramel Layer</p>
+    <p class="product-price">$50.00</p>
+</div>
+<div class="product-item" data-size="layer" data-flavor="chocolate">
+    <img src="https://i.pinimg.com/474x/a5/d7/72/a5d772c8be8d25afb78a46373c6ec20e.jpg" alt="Rich Chocolate Fudge Layer">
+    <p class="product-name">Rich Chocolate Fudge Layer</p>
+    <p class="product-price">$46.50</p>
+</div>
+
+<div class="product-item" data-size="layer" data-flavor="strawberry">
+    <img src="https://i.pinimg.com/736x/a7/9b/45/a79b455364dde451ef1ab34da0a3d925.jpg" alt="Strawberry Cream Layer Cake">
+    <p class="product-name">Strawberry Cream Layer Cake</p>
+    <p class="product-price">$49.00</p>
+</div>
+<div class="product-item" data-size="layer" data-flavor="strawberry">
+    <img src="https://i.pinimg.com/736x/16/95/f6/1695f6021de34721244072470d1e8941.jpg" alt="Strawberry Vanilla Layer">
+    <p class="product-name">Strawberry Vanilla Layer</p>
+    <p class="product-price">$47.50</p>
+</div>
+<div class="product-item" data-size="layer" data-flavor="strawberry">
+    <img src="https://i.pinimg.com/736x/ff/c5/eb/ffc5ebd3d33b5ae2684751f66e978020.jpg" alt="Strawberry Shortcake Layer">
+    <p class="product-name">Strawberry Shortcake Layer</p>
+    <p class="product-price">$46.00</p>
+</div>
+<div class="product-item" data-size="layer" data-flavor="strawberry">
+    <img src="https://i.pinimg.com/736x/18/0d/f0/180df0cc22b590983d8b86f0ffe000a7.jpg" alt="White Chocolate Strawberry Layer">
+    <p class="product-name">White Chocolate Strawberry Layer</p>
+    <p class="product-price">$51.00</p>
+</div>
+<div class="product-item" data-size="layer" data-flavor="strawberry">
+    <img src="https://i.pinimg.com/736x/1c/46/c4/1c46c4282e40acfeb5685746e07c268a.jpg" alt="Fresh Berry Layer Cake">
+    <p class="product-name">Fresh Berry Layer Cake</p>
+    <p class="product-price">$52.00</p>
+</div>
+
+<div class="product-item" data-size="layer" data-flavor="vanilla">
+    <img src="https://i.pinimg.com/736x/a3/c9/67/a3c967ada3cb9d003d46002909743553.jpg" alt="Simple Vanilla Layer Cake">
+    <p class="product-name">Simple Vanilla Layer Cake</p>
+    <p class="product-price">$44.00</p>
+</div>
+<div class="product-item" data-size="layer" data-flavor="vanilla">
+    <img src="https://i.pinimg.com/1200x/c8/5f/8c/c85f8c3e13d445b134ad048415d2262c.jpg" alt="Vanilla Bean Layer Cake">
+    <p class="product-name">Vanilla Bean Layer Cake</p>
+    <p class="product-price">$47.00</p>
+</div>
+<div class="product-item" data-size="layer" data-flavor="vanilla">
+    <img src="https://i.pinimg.com/1200x/9d/07/47/9d07472b9cbcd69887ad401886517a0a.jpg" alt="Almond Vanilla Layer Cake">
+    <p class="product-name">Almond Vanilla Layer Cake</p>
+    <p class="product-price">$48.50</p>
+</div>
+<div class="product-item" data-size="layer" data-flavor="vanilla">
+    <img src="https://i.pinimg.com/1200x/cb/6e/0a/cb6e0a9b6174ea9ccfa4b5daf84302a2.jpg" alt="Floral Garden Layer Cake">
+    <p class="product-name">Floral Garden Layer Cake</p>
+    <p class="product-price">$53.00</p>
+</div>
+<div class="product-item" data-size="layer" data-flavor="vanilla">
+    <img src="https://i.pinimg.com/736x/f0/5a/4a/f05a4a0c7f3318e2036379fe176442cc.jpg" alt="Vanilla Cream Cheese Layer">
+    <p class="product-name">Vanilla Cream Cheese Layer</p>
+    <p class="product-price">$49.50</p>
+</div>
+
+<div class="product-item" data-size="layer" data-flavor="lemon">
+    <img src="https://i.pinimg.com/736x/b4/0e/35/b40e35ea05bbe2579db6d2734414e43b.jpg" alt="Lemon Raspberry Layer Cake">
+    <p class="product-name">Lemon Raspberry Layer Cake</p>
+    <p class="product-price">$47.00</p>
+</div>
+<div class="product-item" data-size="layer" data-flavor="lemon">
+    <img src="https://i.pinimg.com/1200x/ea/34/9f/ea349f27b91ae341a83d253496f95c5f.jpg" alt="Lemon Curd Layer Cake">
+    <p class="product-name">Lemon Curd Layer Cake</p>
+    <p class="product-price">$45.50</p>
+</div>
+<div class="product-item" data-size="layer" data-flavor="lemon">
+    <img src="https://i.pinimg.com/1200x/6b/bb/71/6bbb71d3872c563ed4d5a1543a686292.jpg" alt="Lemon Meringue Layer Cake">
+    <p class="product-name">Lemon Meringue Layer Cake</p>
+    <p class="product-price">$49.00</p>
+</div>
+<div class="product-item" data-size="layer" data-flavor="lemon">
+    <img src="https://i.pinimg.com/1200x/8b/f4/3c/8bf43cf897396e6495ea8f652798072b.jpg" alt="Citrus Zest Layer Cake">
+    <p class="product-name">Citrus Zest Layer Cake</p>
+    <p class="product-price">$46.00</p>
+</div>
+<div class="product-item" data-size="layer" data-flavor="lemon">
+    <img src="https://i.pinimg.com/736x/4c/c1/b6/4cc1b678c74c0f0592962d2d5b22c4ec.jpg" alt="Lemon Poppy Seed Layer Cake">
+    <p class="product-name">Lemon Poppy Seed Layer Cake</p>
+    <p class="product-price">$48.00</p>
+</div>
+
+<div class="product-item" data-size="layer" data-flavor="salted-caramel">
+    <img src="https://i.pinimg.com/1200x/54/48/96/544896fadd4923d71f2dce341806cc9b.jpg" alt="Salted Caramel Pecan Layer">
+    <p class="product-name">Salted Caramel Pecan Layer</p>
+    <p class="product-price">$51.00</p>
+</div>
+<div class="product-item" data-size="layer" data-flavor="salted-caramel">
+    <img src="https://i.pinimg.com/736x/51/9f/91/519f9110b83e74f5e980c9e69bc1eb26.jpg" alt="Mocha Salted Caramel Layer">
+    <p class="product-name">Mocha Salted Caramel Layer</p>
+    <p class="product-price">$52.00</p>
+</div>
+<div class="product-item" data-size="layer" data-flavor="salted-caramel">
+    <img src="https://i.pinimg.com/736x/06/20/f1/0620f1659deaea3514819fc122604b98.jpg" alt="Caramel Apple Crumble Layer">
+    <p class="product-name">Caramel Apple Crumble Layer</p>
+    <p class="product-price">$50.50</p>
+</div>
+<div class="product-item" data-size="layer" data-flavor="salted-caramel">
+    <img src="https://i.pinimg.com/1200x/98/6b/a6/986ba6384ed17a6fd2e0033fcd6d0286.jpg" alt="Sticky Toffee Pudding Layer Cake">
+    <p class="product-name">Sticky Toffee Pudding Layer Cake</p>
+    <p class="product-price">$49.50</p>
+</div>
+<div class="product-item" data-size="layer" data-flavor="salted-caramel">
+    <img src="https://i.pinimg.com/1200x/66/61/24/6661246f1aa17695b37d369e77b0d93a.jpg" alt="Sea Salt Caramel Layer Cake">
+    <p class="product-name">Sea Salt Caramel Layer Cake</p>
+    <p class="product-price">$53.50</p>
+</div>
+
+<div class="product-item" data-size="layer" data-flavor="banana">
+    <img src="https://i.pinimg.com/1200x/05/5c/9b/055c9b9a3dec7c1e9c0cdd711b351403.jpg" alt="Banana Nut Layer Cake">
+    <p class="product-name">Banana Nut Layer Cake</p>
+    <p class="product-price">$46.00</p>
+</div>
+<div class="product-item" data-size="layer" data-flavor="banana">
+    <img src="https://i.pinimg.com/1200x/2e/b2/24/2eb224cae284a177de0d6abedb89a593.jpg" alt="Banana Cream Layer Cake">
+    <p class="product-name">Banana Cream Layer Cake</p>
+    <p class="product-price">$48.00</p>
+</div>
+<div class="product-item" data-size="layer" data-flavor="banana">
+    <img src="https://i.pinimg.com/736x/d9/18/86/d91886231d7e428cfbd50e93092967ab.jpg" alt="Chocolate Banana Fudge Layer">
+    <p class="product-name">Chocolate Banana Fudge Layer</p>
+    <p class="product-price">$50.00</p>
+</div>
+<div class="product-item" data-size="layer" data-flavor="banana">
+    <img src="https://i.pinimg.com/1200x/a5/b0/98/a5b0982b2333a041ed9412ebd6cb7e70.jpg" alt="Banana Split Layer Cake">
+    <p class="product-name">Banana Split Layer Cake</p>
+    <p class="product-price">$51.50</p>
+</div>
+<div class="product-item" data-size="layer" data-flavor="banana">
+    <img src="https://i.pinimg.com/1200x/2c/95/44/2c9544cef150cfcc209e3e191d3e37e7.jpg" alt="Spiced Banana Pecan Layer">
+    <p class="product-name">Spiced Banana Pecan Layer</p>
+    <p class="product-price">$49.00</p>
+</div>
+
+
+</div>
+
+    </div>
+
+    <!-- SCRIPTS -->
+    <script src="sandf.js"></script>
+    <script src="sidebar.js"></script>
+    <script src="cart.js"></script>
+
+</body>
+</html>
+
+
+
+
+
+
+

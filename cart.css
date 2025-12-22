@@ -1,0 +1,208 @@
+/* GOOGLE FONTS (MATCH browseC) */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Playfair+Display:wght@500;600;700&display=swap');
+
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* BODY */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f7f3ed;
+    color: #333;
+}
+
+/* TOP BAR */
+.top-bar {
+    background-color: #6F4E37;
+    color: white;
+    text-align: center;
+    padding: 18px 20px;
+}
+
+
+
+.top-bar h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 28px;
+    letter-spacing: 1px;
+}
+
+/* PAGE CONTAINER */
+.product-container {
+    max-width: 1200px;
+    margin: 60px auto;
+}
+
+/* CARD THAT HOLDS IMAGE + INFO */
+.product-info {
+    display: flex;              /* 🔑 THIS is the key */
+    gap: 60px;
+    align-items: center;
+    background: white;
+    padding: 32px;
+    border-radius: 12px;
+    box-shadow: 0 10px 22px rgba(0,0,0,0.14);
+}
+
+/* IMAGE SIDE (LEFT) */
+.product-media {
+    flex: 0 0 550px;            /* fixed image column */
+}
+
+.product-image {
+    width: 100%;
+    height: 550px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+/* INFO SIDE (RIGHT) */
+.product-details {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.product-info h3{
+    font-family: Bookman, URW Bookman L, serif;
+    font-size: 25px;
+    color: #302626;
+    margin-bottom: 6px;
+    
+}
+
+.product-info h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 30px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+/* PRICE */
+.price {
+    font-size: 24px;
+    color: #6F4E37;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+/* META */
+.availability,
+.pickup {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 6px;
+}
+
+/* QUANTITY */
+.quantity {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    margin: 25px 0;
+}
+
+.quantity button {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 1px solid #ccc;
+    background: white;
+    font-size: 20px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.quantity button:hover {
+    background-color: #6F4E37;
+    color: white;
+}
+
+#qty {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+/* ADD TO CART */
+.add-cart {
+    display: inline-block;
+    width: auto;
+    min-width: 160px;
+    background-color: #6F4E37;
+    color: white;
+    border: none;
+    padding: 10px 26px;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: 0.2s;
+    align-self: flex-start; /* keep button aligned to the left of details */
+}
+
+.add-cart:hover {
+    opacity: 0.9;
+}
+
+/* make Add To Cart full-width on small screens again */
+@media (max-width: 900px) {
+    .add-cart {
+        display: block;
+        width: 100%;
+        text-align: center;
+    }
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+    .product-container {
+        flex-direction: column;
+        align-items: center;
+        padding: 24px 20px;
+    }
+
+    .product-info {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .product-media .product-image {
+        width: 100%;
+        max-width: 720px; /* scale down responsively */
+        height: auto;
+    }
+
+    .product-info {
+        width: 100%;
+        margin-top: 20px;
+    }
+}
+
+
+
+/* Flavor tooltip shown when clicking the product image */
+.flavor-tooltip {
+    position: absolute;
+    pointer-events: none;
+    background: rgba(0,0,0,0.85);
+    color: #fff;
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-size: 14px;
+    transform: translate(-50%, -100%);
+    opacity: 0;
+    transition: opacity 0.18s ease, transform 0.18s ease;
+    z-index: 9999;
+    white-space: nowrap;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+}
+
+.flavor-tooltip.visible {
+    opacity: 1;
+    transform: translate(-50%, -120%);
+}
