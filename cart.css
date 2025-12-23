@@ -39,7 +39,7 @@ body {
 
 /* CARD THAT HOLDS IMAGE + INFO */
 .product-info {
-    display: flex;              /* 🔑 THIS is the key */
+    display: flex;              
     gap: 60px;
     align-items: center;
     background: white;

@@ -93,6 +93,39 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
+
+  // TOTAL PRICE CALCULATION
+  // ===============================
+  const TAX = 0.36;
+  const totalPriceEl = document.getElementById("totalPrice");
+  const taxEl = document.getElementById("taxAmount");
+
+  const basePrice = product
+    ? parseFloat(product.price.replace("$", ""))
+    : 0;
+
+  function updateTotal() {
+    const total = basePrice * qty + TAX;
+    totalPriceEl.textContent = total.toFixed(2);
+    taxEl.textContent = TAX.toFixed(2);
+  }
+
+  updateTotal();
+
+  plusBtn.addEventListener("click", () => {
+    qty++;
+    qtyDisplay.textContent = qty;
+    updateTotal();
+  });
+
+  minusBtn.addEventListener("click", () => {
+    if (qty > 1) {
+      qty--;
+      qtyDisplay.textContent = qty;
+      updateTotal();
+    }
+  });
+
   // ===============================
   // ADD TO CART
   // ===============================
@@ -151,5 +184,6 @@ document.addEventListener("DOMContentLoaded", () => {
     productImage.style.cursor = 'pointer';
     productImage.addEventListener('click', showFlavorTooltip);
   }
-
+  const totalPrice = (order.price * order.quantity + 0.36).toFixed(2);
+  
 }); 
